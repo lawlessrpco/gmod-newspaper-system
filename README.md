@@ -9,7 +9,7 @@ The Newspaper System is a simple newspaper entity for DarkRP. You can add it to 
 ## Features
     - Markdown Support
         - Uses DHtml to render markdown, I've tried to secure this to the best of my ability.
-        - You should use [CFC-Servers/gm_path_traversal_mitigation](https://github.com/CFC-Servers/gm_path_traversal_mitigation) just incase to prevent bad actors from stealing files.
+        - You should use https://github.com/CFC-Servers/gm_path_traversal_mitigation just incase to prevent bad actors from stealing files.
     - Different publications
     - No custom models required
     - Looks *fine* compared to some other derma menus
