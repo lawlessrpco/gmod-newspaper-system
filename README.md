@@ -5,6 +5,8 @@ The Newspaper System is a simple newspaper entity for DarkRP. You can add it to 
 ## Optional Requirements
     - A prop protection system that impliments CPPI to enable proper ownership
         - Addon runs without it, but anyone will be able to edit anyone's newspaper
+    - (PLEASE USE THIS) https://github.com/CFC-Servers/gm_path_traversal_mitigation
+        - I've tried to prevent XSS, but anything is possible.
 
 ## Features
     - Markdown Support
