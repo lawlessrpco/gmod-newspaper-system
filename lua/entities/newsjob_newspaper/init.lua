@@ -41,16 +41,21 @@ function ENT:OpenNewspaperMenu(ply)
             net.WriteBool(true) -- open in edit mode
             net.WriteEntity(self) -- the newspaper entity
         net.Send(ply)
+    elseif !CPPI then -- CPPI isn't installed, just give everyone access
+        net.Start("NewsJob:OpenMenu")
+            net.WriteBool(true)
+            net.WriteEntity(self)
+        net.Send(ply)
     else
         net.Start("NewsJob:OpenMenu")
-            net.WriteBool(false) -- open in edit mode
-            net.WriteEntity(self) -- the newspaper entity
+            net.WriteBool(false)
+            net.WriteEntity(self)
         net.Send(ply)
     end
 end
 
 function ENT:AttemptUpdate(ply, title, content)
-    if !IsValid(self:CPPIGetOwner()) or !self:CPPIGetOwner() == ply then return false, "failed ownership check" end
+    if !CPPI and (!IsValid(self:CPPIGetOwner()) or !self:CPPIGetOwner() == ply) then return false, "failed ownership check" end
     if !self:ValidateText(content) then return false, "validation fail" end
 
     self:SetPublicationTitle(title)
